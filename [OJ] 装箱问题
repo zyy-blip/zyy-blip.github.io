@@ -1,0 +1,24 @@
+import math
+def f(x):
+    if x==0:return 0
+    if x==1:return 5
+    if x==2:return 3
+    if x==3:return 1
+def r(x):
+    if x<=0:return 0
+    if x>0:return math.ceil(x)
+inputlist=[]
+while True:
+    line=input()
+    if line=='0 0 0 0 0 0':
+        break
+    inputlist.append(line.split())
+for x in inputlist:
+    l=[]
+    for y in x:
+        l.append(int(y))
+    n_0=l[5]+l[4]+l[3]+math.ceil(l[2]/4)
+    nr_3=(l[1]-5*l[3]-f(l[2]%4))/9
+    N=n_0+r(nr_3)+r((l[0]-(11*l[4]+20*l[3]+
+                           36*r(nr_3)+36*math.ceil(l[2]/4)-9*l[2]-4*l[1]))/36)
+    print(N)
