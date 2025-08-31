@@ -1,0 +1,19 @@
+ln=int(input())
+inputlist=[]
+while len(inputlist)<=ln-1:
+    inputlist.append(input())
+for num in inputlist:
+    numlist=list(num)
+    if int(num)%19==0:
+         print('Yes')
+    elif len(numlist)<=1:
+        print('No')
+    else:
+        x=a=0
+        while x<len(num)-1:
+            a=a+bool(numlist[x]=='1' and numlist[x+1]=='9')
+            x = x + 1
+        if a==0:
+            print('No')
+        if a>0:
+            print('Yes')
