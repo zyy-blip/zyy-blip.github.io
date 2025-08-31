@@ -1,0 +1,18 @@
+def f(n):
+    a=0
+    for i in range(2,n+2):#n>=1
+        a=a+1/i
+    return a
+l=[]
+while True:
+    x=float(input())
+    if x==0:
+        break
+    l.append(x)
+for goal in l:
+    n=1
+    while True:
+        if f(n)>=goal:
+            print(str(n)+' card(s)')
+            break
+        n=n+1
