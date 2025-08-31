@@ -1,0 +1,22 @@
+inputlist=[]
+A=[]
+while True:
+    line=input()
+    if line=='':
+        break
+    inputlist.append(line)
+for num in inputlist:
+    a=1
+    circ=num*2
+    for i in range(len(num)):#此时i范围为[0,len(num)-1]
+        if str((i+1)*int(num)) not in circ:
+            a=0
+            break
+    A.append(a)
+for i in range(len(inputlist)):
+    x=inputlist[i]
+    if A[i]==1:
+        print(f'{x} is cyclic')
+    else:
+        print(f'{x} is not cyclic')
+
