@@ -1,0 +1,10 @@
+x=input()
+inputlist=[]
+for x in range(int(x)):
+    inputlist.append(int(input()))
+for line in inputlist:
+    st=[1 for x in range(line)]
+    for k in range(line):
+        for i in range(line//(k+1)):
+            st[(k+1)*(i+1)-1]=st[(k+1)*(i+1)-1]*(-1)
+    print(int((line-sum(st))/2))
