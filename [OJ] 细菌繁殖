@@ -1,0 +1,11 @@
+month=[0,31,28,31,30,31,30,31,31,30,31,30,31]
+monthr={}
+for x in range(13):
+    monthr[x]=sum(month[:x+1])
+x=input()
+inputlist=[]
+for x in range(int(x)):
+    inputlist.append(input().split())
+for line in inputlist:
+    itv=monthr[int(line[3])-1]+int(line[4])-monthr[int(line[0])-1]-int(line[1])
+    print(int(line[2])*(2**itv))
