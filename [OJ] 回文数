@@ -1,0 +1,9 @@
+import sys
+inputlist=[]
+for a in sys.stdin:
+    inputlist.append(a.strip())
+for line in inputlist:
+    if line==line[::-1]:
+        print('YES')
+    else:
+        print('NO')
