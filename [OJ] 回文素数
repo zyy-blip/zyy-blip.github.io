@@ -1,0 +1,21 @@
+#首先偶数位的回文数一定不是质数
+import math
+def getpal(x):
+    adds=str(x)[:-1][::-1]
+    return int(str(x)+adds)
+a=int(input())
+l=[]
+if a==1:print('4\n2 3 5 7')
+elif a==2:print('1\n11')
+elif a>2 and a%2==0:print(0)
+else:
+    for x in range(int(10**((a-1)/2)),int(10**((a+1)/2))):
+        pal=getpal(x)
+        j=1
+        for k in range(2,int(math.sqrt(pal)+1)):
+            if pal%k==0:
+                j=0
+                break
+        if j==1:l.append(str(pal))
+    print(len(l))
+    print(' '.join(l))
