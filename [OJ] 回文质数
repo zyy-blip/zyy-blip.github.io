@@ -1,0 +1,19 @@
+#first version
+inputx=int(input())
+a=2
+prime=[2]
+pprime=[]
+while len(str(a))<=inputx:
+    j=1
+    for x in prime:
+        if a%x==0:
+            j = 0
+            break
+    if j==1:
+        if str(a)==str(a)[::-1] and len(str(a))==inputx:
+            pprime.append(a)
+        prime.append(a)
+    a=a+1
+print(len(pprime))
+for x in pprime:
+    print(x,end=' ')
