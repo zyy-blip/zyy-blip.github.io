@@ -1,0 +1,23 @@
+a=input()
+t=0
+inputlist={}
+while t<int(a):
+    li=input().split()
+    time=' '.join(li[1:])
+    if time not in inputlist.keys():
+        inputlist[time]=[li[0]]
+    else:
+        inputlist[time].append(li[0])
+    t=t+1
+arr={}
+seqlist=[]
+for time in list(inputlist.keys()):
+    if len(inputlist[time])>1:
+        timep=time.split(' ')
+        seq=100*int(timep[0])+int(timep[1])
+        seqlist.append(seq)
+        arr[seq]=time
+    else:continue
+for x in sorted(seqlist):
+    numstr=' '.join(inputlist[arr[x]])
+    print(f'{arr[x]} {numstr}')
