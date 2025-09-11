@@ -1,0 +1,28 @@
+s=input()
+refer=['A','B','C','D','E','F','G','H','I','J','K','L'
+    ,'M','N','O','P','R','S','T','U','V','W','X','Y']
+a={}
+inputlist=[]
+while len(inputlist)<int(s):
+    inputlist.append(input())
+for st in inputlist:
+    l = list(st)
+    while '-' in l:
+        l.remove('-')
+    b = []
+    for x in l:
+        if x in refer:
+            b.append(str(int(refer.index(x)) // 3 + 2))
+        else:
+            b.append(x)
+    b.insert(3, '-')
+    c=''.join(b)
+    if c not in a.keys():
+        a[c] = 1
+    else:a[c] += 1
+j=0
+for x in sorted(list(a.keys())):
+    if a[x]>1:
+        print(f'{x} {a[x]}' )
+        j=1
+if j==0:print('No duplicates.')
