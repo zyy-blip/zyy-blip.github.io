@@ -1,0 +1,5 @@
+def to_octal(n):
+    if n < 8:
+        return str(n)
+    return to_octal(n // 8) + str(n % 8)
+print(to_octal(int(input())))
