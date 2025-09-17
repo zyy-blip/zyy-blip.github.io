@@ -1,0 +1,14 @@
+#蚂蚁相遇后相当于相互交换，没有影响
+a=int(input())
+l=[]
+while len(l)<a:
+    L=int(input().split()[0])
+    dist=input().split()
+    l.append([L]+[int(x) for x in dist])
+for i in l:
+    minl,maxl=[],[]
+    L=i[0]
+    for x in i[1:]:
+        minl.append(min([x,L-x]))
+        maxl.append(max([x, L - x]))
+    print(f'{max(minl)} {max(maxl)}')
