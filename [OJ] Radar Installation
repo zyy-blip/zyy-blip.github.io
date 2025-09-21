@@ -1,0 +1,22 @@
+import sys,math
+ti_list,vi_list,inputlist,outputlist=[],[],[],[]
+for line in sys.stdin:
+    if len(line.split())==1:
+        if ti_list:inputlist.append([ti_list.copy(),vi_list.copy()])
+        vi_list.clear(),ti_list.clear()
+        if line=='0':break
+    else:
+        ti_list.append(int(line.split()[1]))
+        vi_list.append(int(line.split()[0]))
+for case in inputlist:
+    ti_list,vi_list=case[0],case[1]
+    stack=[]
+    for i in range(len(ti_list)):
+        ti,vi=ti_list[i],vi_list[i]
+        tf=ti+(4.5/vi)*3600
+        if stack and stack[0]>tf and ti>=0:
+            stack[0]=tf
+        elif not stack and ti>=0:stack.append(tf)
+    outputlist.append(stack[0])
+for ans in outputlist:
+    print(math.ceil(ans))
